@@ -15,12 +15,12 @@ def webServer(port=13331):
      # try:
     message = connectionSocket.recv(5000).decode()
     filename = message.split()[1]
-    print(filename)
+    #print(filename)
     f = open(filename[1:])
     outputdata = "HTTP/1.1 200 OK\r\n"
     fcontent = f.read() 
     outputdata += fcontent
-    print(outputdata)
+    #print(outputdata)
   
     for i in range(0, len(outputdata)):
       connectionSocket.send(outputdata[i].encode())
